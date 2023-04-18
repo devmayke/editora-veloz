@@ -1,14 +1,14 @@
+import { UpdateCollectionDTO } from './../DTOs/UpdateCollectionDTO';
+import { CollectionDTO } from './../DTOs/ColletionDTO';
+import { ICollectionRepository } from './../repositories/web/ICollectionRepository';
 import { UpdateAssetDTO } from './../DTOs/UpdateAssetDTO';
-import { BookDTO } from './../DTOs/BookDTO';
-import { IBookRepository } from './../repositories/web/IBookRepository';
 import { UserDTO } from './../DTOs/UserDTO';
 import User from '../entities/User';
 import { IWebRepository } from './../repositories/web/IWebRepository';
-import { UpdateBookDTO } from '../DTOs/UpdateBookDTO';
 import { IAssetRepository } from '../repositories/web/IAssetRepository';
 import { AssetDTO } from '../DTOs/AssetDTO';
 
-export class MYSQL implements IWebRepository, IBookRepository, IAssetRepository{
+export class MYSQL implements IWebRepository, ICollectionRepository, IAssetRepository{
 
     async createAsset(data: AssetDTO): Promise<AssetDTO> {  
         return data
@@ -63,21 +63,21 @@ export class MYSQL implements IWebRepository, IBookRepository, IAssetRepository{
         return new User(user)        
     }
 
-    async createBook(data:BookDTO): Promise<BookDTO> {
+    async createCollection(data:CollectionDTO): Promise<CollectionDTO> {
         return data        
     }
 
-    async listBook(): Promise<string> {
+    async listCollection(): Promise<string> {
     
         return "listando livros"
     }
-    async updateBook(data:UpdateBookDTO): Promise<UpdateBookDTO> {
+    async updateCollection(data:UpdateCollectionDTO): Promise<UpdateCollectionDTO> {
         return data        
     }
 
-    async deleteBook(id:number): Promise<BookDTO> {
-        const mockBook:BookDTO = {title:"", description:"", category:''}
-        return mockBook        
+    async deleteCollection(id:number): Promise<CollectionDTO> {
+        const mockCollection:CollectionDTO = {title:"", description:"", category:''}
+        return mockCollection        
     }
 
 

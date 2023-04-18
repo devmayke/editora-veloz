@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { AssetController } from '../controllers/web/assets/AssetController';
-import { BookController } from '../controllers/web/books/BookController';
+import { CollectionController } from '../controllers/web/collections/CollectionController';
 import { LoginController } from './../controllers/web/LoginController';
 
 
@@ -8,7 +8,7 @@ import { LoginController } from './../controllers/web/LoginController';
 class WebRoutes {
     private _router:Router= Router()  
     private _loginController:LoginController = new LoginController()   
-    private _BookController:BookController = new BookController()  
+    private _CollectionController:CollectionController = new CollectionController()  
     private _assetController:AssetController = new AssetController()
     
     login(prefixPath:string = "/"){   
@@ -16,22 +16,22 @@ class WebRoutes {
     }
 
 
-    createBook(prefixPath:string = "/"){   
-        return this._router.post(prefixPath, this._BookController.createBook())
+    createCollection(prefixPath:string = "/"){   
+        return this._router.post(prefixPath, this._CollectionController.createCollection())
     }
 
-    listBook(prefixPath:string = "/"){
-        return this._router.get(prefixPath, this._BookController.listBook())
-
-    }
-
-    updateBook(prefixPath:string = "/"){
-        return this._router.put(prefixPath, this._BookController.updateBook())
+    listCollection(prefixPath:string = "/"){
+        return this._router.get(prefixPath, this._CollectionController.listCollection())
 
     }
 
-    deleteBook(prefixPath:string = "/:id"){
-        return this._router.delete(prefixPath, this._BookController.deleteBook())
+    updateCollection(prefixPath:string = "/"){
+        return this._router.put(prefixPath, this._CollectionController.updateCollection())
+
+    }
+
+    deleteCollection(prefixPath:string = "/:id"){
+        return this._router.delete(prefixPath, this._CollectionController.deleteCollection())
 
     }
 

@@ -18,10 +18,10 @@ export default class App {
     routes() {
         this._app.use("/", router.login("/login"))
 
-        this._app.use("/", router.createBook("/books"))
-        this._app.use("/", router.listBook("/books"))
-        this._app.use("/", router.updateBook("/books"))
-        this._app.use("/", router.deleteBook("/books/:id"))
+        this._app.use("/", router.createCollection("/collections"))
+        this._app.use("/", router.listCollection("/collections"))
+        this._app.use("/", router.updateCollection("/collections"))
+        this._app.use("/", router.deleteCollection("/collections/:id"))
 
         this._app.use("/", router.createAsset("/assets"))
         this._app.use("/", router.listAsset("/assets"))

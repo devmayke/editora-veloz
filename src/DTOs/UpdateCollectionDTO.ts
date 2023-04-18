@@ -1,4 +1,4 @@
-export type UpdateBookDTO = {
+export type UpdateCollectionDTO = {
     id:number
     title?:string
     description?: string

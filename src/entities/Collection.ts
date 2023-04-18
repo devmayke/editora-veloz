@@ -1,4 +1,4 @@
-export default class Book{
+export default class Collection{
     title:string = ''
     description: string = ''
     category:string = ''
